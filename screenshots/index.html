@@ -13,31 +13,46 @@
 
 <body>
     <header>
+        <div>
         <h1>Our Pricing Plan</h1>
         <p>We are industry-leading company that values honesty, integrity and efficiency, building quality products.</p>
+        </div>
         
         <!-- Rounded switch -->
-        <label class="switch">Monthly
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        <!-- TO DO Rounded switch Yearly-->
+         <div class="filter">
+            <p>Monthly</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+         <div class="filter">        
+            <p>Yearly</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+         </div>
+
     </header>
 
     <main>
-        <card class="card-basic">
+        <div class="container">
+        <div class="card">
             <span class="type-plan">
                 <h3>Basic</h3>
                 <p>Most Popular</p>
             </span>
 
-            <span class="prize">
+            <div class="prize">
                 <p class="dollar">$</p>
-                <h2>2.35</h2>
-                <p class="month">/mo</p>
-                <p class="black">Yearly</p>
+                <h2>2.45</h2>
+                <p>/mo</p>
+            </div>
+            <div class="small-text">Yearly
                 <p class="sale">15% Off</p>
-            </span>
+            </div>
 
             <a href="#" class="botton">Choose plan</a>
 
@@ -51,21 +66,25 @@
                     <li><i class="bi bi-x-lg"></i>Unlimited Insfrastruccute</li>
                 </ul>
             </div>
-        </card>
+        </div>
+        </div>
+        
 
-        <card class="card-pro">
+        <div class="container-blue">
+            <div class="card">
             <span class="type-plan">
                 <h3>Professional</h3>
                 <p>Recommended</p>
             </span>
 
-            <span class="prize">
+            <div class="prize">
                 <p class="dollar">$</p>
                 <h2>4.45</h2>
-                <p class="month">/mo</p>
-                <p class="black">Yearly</p>
+                <p>/mo</p>
+            </div>
+            <div class="small-text">Yearly
                 <p class="sale">15% Off</p>
-            </span>
+            </div>
 
             <a href="#" class="botton">Choose plan</a>
 
@@ -79,21 +98,24 @@
                     <li><i class="bi bi-x-lg"></i>Unlimited Insfrastruccute</li>
                 </ul>
             </div>
-        </card>
+        </div>
+        </div>
 
-        <card class="card-ultimate">
+        <div class="container">
+            <div class="card">
             <span class="type-plan">
                 <h3>Ultimate</h3>
                 <p>Best value</p>
             </span>
 
-            <span class="prize">
+            <div class="prize">
                 <p class="dollar">$</p>
                 <h2>12.45</h2>
-                <p class="month">/mo</p>
-                <p class="black">Yearly</p>
+                <p>/mo</p>
+            </div>
+            <div class="small-text">Yearly
                 <p class="sale">15% Off</p>
-            </span>
+            </div>
 
             <a href="#" class="botton">Choose plan</a>
 
@@ -107,7 +129,8 @@
                     <li><i class="bi bi-check-lg"></i>Unlimited Insfrastruccute</li>
                 </ul>
             </div>
-        </card>
+        </div>
+        </div>
     </main>       
 </body>
 </html>
