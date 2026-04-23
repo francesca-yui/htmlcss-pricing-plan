@@ -6,19 +6,22 @@
 
 body {
     min-width: 480px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
     background-color: whitesmoke;
-
     font-family: sans-serif;
+
+    padding: 20px;
+    color: #000000;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- HEADER & TOGGLE --- */
 header {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-self: center;
+    flex-wrap: wrap; /*permette switch di andare sotto il titolo su mobile */
 
     padding-bottom: 50px;
 }
@@ -26,17 +29,13 @@ header {
 .toggle-switch { 
     display: flex;
     gap: 20px;
-    margin: 0 auto;
-
+    margin: 0 auto; /* Centra i toggle su mobile */
     padding: 20px;
     }
 
 .filter {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    align-self: center;
-    justify-content: center;
     gap: 8px;
 }
 
@@ -49,37 +48,35 @@ header {
 }
 
 /* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+.switch input { opacity: 0; width: 0; height: 0; }
 
 /* The slider base*/
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+
   background-color: whitesmoke;
   border: grey solid 2px;
+
   transition: .4s;
+  border-radius: 34px;
 }
 
 /* The slider OFF*/
 .slider:before {
   position: absolute;
   content: "";
-  height: 14px;
-  width: 14px;
+  height: 14px; width: 14px;
+
   /* Posizionamento per centrarlo nel bordo */
-  left: -1px;
-  bottom: -1px;
+  left: -1px; bottom: -1px;
+
   background-color: white;
   border: grey solid 2px;
+
   transition: .4s;
+  border-radius: 50%;
 }
 
 /* Slider base ON */
@@ -90,53 +87,45 @@ input:checked + .slider {
 
 /* Slider ON */
 input:checked + .slider:before {
-  background-color: white; 
   border: 2px solid white; 
   transform: translateX(11px);
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #171717;
-}
+input:focus + .slider { box-shadow: 0 0 1px #171717; }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
+/* --- CARDS E LAYOUT --- */
 main {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column; /* Mobile first*/
     gap: 20px;  
 }
 
-h1{
-    font-size: 46px;
+main > section {
+    min-height: 500px;
+
+    flex: 1; /* Distribuisce lo spazio equamente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 40px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+
+    background-color: white;
+    box-shadow: 0px 5px 10px lightgray;
 }
 
-h2{
-    font-size: 52px;
-}
+/* --- TIPOGRAFIA --- */
+h1 { font-size: 46px; }
+h2 { font-size: 52px; }
+h3 { font-size: 28px; }
+p { color: grey; font-size: 14px; }
 
-h3{
-    font-size: 28px;
-}
-
-p {
-    color: grey;
-    font-size: 14px;
-}
-
-.dollar {
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
+.dollar { 
+    color: black; 
+    font-size: 20px; 
+    font-weight: bold; 
 }
 
 .small-text {
@@ -147,7 +136,6 @@ p {
     font-size: small;
     color: black;
     padding: 15px;
-
     gap: 5px;
 }
 
@@ -156,8 +144,7 @@ p {
     justify-content: center;
     align-items: center; 
 
-    width: 4.5em;
-    height: 2em;
+    width: 4.5em; height: 2em;
     border-radius: 5px;
 
     background-color: rgb(220, 220, 220);
@@ -169,10 +156,10 @@ p {
     display: flex;
     justify-content: center;
     align-items: baseline;
-
     padding: 10px;
 }
 
+/* --- BOTTONE --- */
 .botton {
     display: flex;
     justify-content: center;
@@ -185,48 +172,18 @@ p {
     text-decoration: none;
     font-weight: bold;
     background-color: rgb(94, 7, 255);
-  
 }
 
-ul {
-    list-style-type: none;
-    padding: 10px 0px;
-}
+/* --- LISTA E ICONE --- */
+ul { list-style-type: none; padding: 10px 0px; }
+li { padding: 10px 0px; }
+i { font-size: x-large; padding-right: 10px; }
 
-li {
-    padding: 10px 0px;
-}
-
-i {
-    font-size: x-large;
-    padding-right: 10px;
-}
-
-main > section {
-    min-width: 350px;
-    min-height: 500px;
-
-    flex-grow: 1;
-
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 10px;
-
-    background-color: white;
-    box-shadow: 0px 5px 10px lightgray;
-
-    padding-bottom: 20px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* --- CARD VIOLA --- */
 main > section.card-blue {
-    color: white;
     background-color: rgb(94, 7, 255);
-    order: -1;
+    color: white;
+    order: -1; /* La sposta in alto su mobile anche se è 2° nell'HTML */
 }
 
 .card-blue .botton {
@@ -234,7 +191,14 @@ main > section.card-blue {
     color: rgb(94, 7, 255);
 }
 
-	
+.card-blue p, .card-blue h3, .card-blue h2, .card-blue .dollar, 
+.card-blue .small-text, .card-blue i {
+    color: white;
+}
+
+/* --- MEDIA QUERIES --- */	
+
+/* TABLET (768px)*/
 @media screen and (min-width: 768px) {
   
     main {
@@ -243,23 +207,56 @@ main > section.card-blue {
         flex-direction: row;
     }
 
+    /* Le prime due card occupano metà spazio, l'ultima il 100% */
+    main > section { 
+        flex: 0 0 calc(50% - 10px); 
+    }
+
+    main > section:last-of-type {
+        flex: 0 0 100%; 
+    }
+
+    main > section:last-of-type .check-list ul {
+    column-count: 2;
+    column-gap: 30px;
+}
 }
 
-    
+/* DESKTOP (1024px) */
 @media screen and (min-width: 1024px) {
-  
-    main {
-        display: flex;       
-        flex-direction: row;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Toggle in alto a destra */
     }
-    
+
+    .toggle-switch {
+        margin: 0; /* toglie il centraggio automatico */
+        margin-top: 0;
+        padding: 10px 0px;
+    }
+
+    main {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    main > section {
+        flex: 1; /* Tutte larghe uguali */
+    }
+
     main > section.card-blue {
         order: 0;
     }
-    
-    .toggle-switch { 
-    display: flex;
-    margin-right: 0 auto;
-    justify-items: right;
+
+    /* Reset per l'ultima card per farlo tornare uguale alle altre */
+    main > section:last-of-type {
+        flex: 1;
     }
+
+    main > section:last-of-type .check-list ul {
+        column-count: 1;
+    }
+    
 }
